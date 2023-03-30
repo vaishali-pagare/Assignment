@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1
+        {
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-style: italic;
+            margin-top: 80px;
+            
+        }
+    </style>
+
+</head>
+<body>
+    
+    <center>
+        <form method="post" >
+            {% csrf_token %}
+
+
+            <h1 >HOMEPAGE</h1>
+           
+            <table border="0" cellspacing="5">
+                <br><br><br><br><br>
+                <tr>
+                    <td>
+                        <li type="square"><input type="submit"  name="user" value="ADMIN"><br><br></li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <li type="square"><input type="submit" name="user" value="TEACHER" /><br><br></li>                
+                    </td>
+                </tr>
+                <TR>
+                    <td>
+                        <li type="square"><input type="submit" name="user" value="Student" /><br><br></li>                
+                    </td>
+                </TR>
+
+            </table>
+        </form>
+        <a href="/newuser"> New User?  Register here..</a>
+
+    </center>
+</body>
+</html>

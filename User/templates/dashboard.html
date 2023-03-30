@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            margin-top: 50px;
+            border: 1px solid black;
+            width: 400px;
+            height: 30px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <center>
+        <h2> Welcome {{user.name}} !!! </h2>
+        <a href="/logout" style="text-align: right;"> Logout </a>
+        <form method="post" enctype="multipart/form-data" action="dashboard/" >
+            {% csrf_token %}
+
+            <table style="margin-top: 20px; border: 2px solid black;" cellspacing="15px" >
+                <tr>
+                 <Td> <input type="file" name="file" required> </Td> 
+                </tr>
+                <tr>
+                    <Td> <input type="submit" value="Upload" required> </Td>
+                    <input type="hidden" name="user" value="{{user.id}}">
+                </tr>
+                
+
+            </table>
+        </form>
+        <br>
+        {%if user.user == "Teacher"%}
+        {%for u in us%}
+
+
+        <img src="{{u.image.url}}" class="img-responsive" style="width:200px;height:200px;" alt="Image">
+        {%endfor%}
+
+        {%endif%}
+
+
+
+        {%for u in u1%}
+        <img src="{{u.image.url}}" class="img-responsive" style="width:200px;height:200px;" alt="Image">
+        {%endfor%}
+    
+
+
+</body>
+
+</html>
